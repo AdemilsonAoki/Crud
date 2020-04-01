@@ -33,9 +33,9 @@ namespace Crud
                 return;
             }
 
-            if (mskNascimento.Text == "")
+            if (mskNascimento.Text == "00-00-0000")
             {
-                MessageBox.Show("O CAMPO E-MAIL DEVE ESTAR PREENCHIDO", "CPF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("O CAMPO NASCIMENTO DEVE ESTAR PREENCHIDO", "CPF", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mskNascimento.Select();
                 return;
             }
@@ -60,6 +60,24 @@ namespace Crud
             pessoa.Dados = dgvPessoas;
 
             pessoa.Listar();
+        }
+
+        private void dgvPessoas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (dgvPessoas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvPessoas.CurrentRow.Selected = true;
+                //txtId.Text = dgvPessoas.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
+                txtNome.Text = dgvPessoas.Rows[e.RowIndex].Cells["nome"].FormattedValue.ToString();
+                txtEndereco.Text = dgvPessoas.Rows[e.RowIndex].Cells["endereco"].FormattedValue.ToString();
+                mskNascimento.Text = dgvPessoas.Rows[e.RowIndex].Cells["data_nacimento"].FormattedValue.ToString();
+                mskTxtBoxTelefone.Text = dgvPessoas.Rows[e.RowIndex].Cells["telefone"].FormattedValue.ToString();
+                
+            }
+            
+
+            
         }
     }
 }

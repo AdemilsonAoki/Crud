@@ -74,8 +74,8 @@ namespace Crud
             finally
             {
                 conexao.FecharBanco(conexao.AbrirBanco());
-                conexao = null;
-                comando = null;
+                //conexao = null;
+                //comando = null;
             }
             if(cad == true)
             {

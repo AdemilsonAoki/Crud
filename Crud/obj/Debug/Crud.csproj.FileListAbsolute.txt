@@ -32,3 +32,20 @@ F:\Users\PC\source\repos\Crud1.0\Crud\bin\Debug\MySql.Data.xml
 F:\Users\PC\source\repos\Crud1.0\Crud\obj\Debug\Crud.csproj.CopyComplete
 F:\Users\PC\source\repos\Crud1.0\Crud\obj\Debug\Crud.exe
 F:\Users\PC\source\repos\Crud1.0\Crud\obj\Debug\Crud.pdb
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Crud.exe.config
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Crud.exe
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Crud.pdb
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\MySql.Data.dll
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Google.Protobuf.dll
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\BouncyCastle.Crypto.dll
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Ubiety.Dns.Core.dll
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\Renci.SshNet.dll
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\bin\Debug\MySql.Data.xml
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.csprojAssemblyReference.cache
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.frmLogin.resources
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.frmPessoa.resources
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.Properties.Resources.resources
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.csproj.GenerateResource.cache
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.csproj.CopyComplete
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.exe
+F:\Users\PC\Desktop\Nova pasta\Crud1.0\Crud\obj\Debug\Crud.pdb

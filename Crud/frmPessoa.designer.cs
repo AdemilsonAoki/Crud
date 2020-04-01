@@ -133,6 +133,7 @@
             this.dgvPessoas.Name = "dgvPessoas";
             this.dgvPessoas.Size = new System.Drawing.Size(495, 150);
             this.dgvPessoas.TabIndex = 13;
+            this.dgvPessoas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPessoas_CellClick);
             // 
             // btnAlterar
             // 
