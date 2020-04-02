@@ -61,9 +61,7 @@ namespace Crud
         bool cad = false;
         public void Cadastrar()
         {
-
-          
-            
+                               
             try
             {
                
@@ -95,10 +93,38 @@ namespace Crud
         {
             try
             {
-
-
+                
                 string strSql = "UPDATE PESSOAS SET nome='" + nome + "', data_nacimento= '" + nascimento.ToString("yyyy-MM-dd") + "', endereco= '" + endereco + "' , telefone= '" + telefone + "' where id= '" + id + "'";
                   
+                comando = new MySqlCommand(strSql, conexao.AbrirBanco());
+                comando.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cad = false;
+            }
+            finally
+            {
+                conexao.FecharBanco(conexao.AbrirBanco());
+                 
+                //conexao = null;
+                //comando = null;
+            }
+            if (cad == true)
+            {
+                MessageBox.Show("atualizado com sucesso!", MessageBoxButtons.OK.ToString());
+            }
+        }
+        public void Excluir()
+        {
+            try
+            {
+
+
+                string strSql = "DELETE FROM PESSOAS where id='" + id + "' ";
+                   
                 comando = new MySqlCommand(strSql, conexao.AbrirBanco());
                 comando.ExecuteNonQuery();
                 cad = true;
@@ -116,11 +142,8 @@ namespace Crud
             }
             if (cad == true)
             {
-                MessageBox.Show("atualizado com sucesso!", MessageBoxButtons.OK.ToString());
+                MessageBox.Show("exluido com sucesso!", MessageBoxButtons.OK.ToString());
             }
-        }
-        public void Excluir()
-        {
 
         }
         public void Listar()
@@ -143,7 +166,7 @@ namespace Crud
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ocorreu um erro");
+                MessageBox.Show("Ocorreu um erro" + ex);
             }
         }
 

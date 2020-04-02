@@ -19,12 +19,22 @@ namespace Crud
         Pessoa pessoa = new Pessoa();
         private void RecebendoValor()
         {
-            pessoa.Id = int.Parse(txtId.Text);
+            
             pessoa.Nome = txtNome.Text;
             pessoa.Nascimento = DateTime.Parse(mskNascimento.Text);
             pessoa.Endereco = txtEndereco.Text;
             pessoa.Telefone = mskTxtBoxTelefone.Text;
         }
+        private void EsvaziandoValores ()
+        {
+            txtId.Text = " ";
+            txtNome.Text = " ";
+            mskNascimento.Text = " ";
+            txtEndereco.Text = " ";
+            mskTxtBoxTelefone.Text = " ";
+
+        }
+
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -50,6 +60,8 @@ namespace Crud
 
             pessoa.Cadastrar();
 
+            EsvaziandoValores();
+
 
         }
 
@@ -65,6 +77,7 @@ namespace Crud
             pessoa.Dados = dgvPessoas;
 
             pessoa.Listar();
+            EsvaziandoValores();
         }
 
         private void dgvPessoas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -88,7 +101,20 @@ namespace Crud
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             RecebendoValor();
+            pessoa.Id = int.Parse(txtId.Text);
             pessoa.Alterar();
+            EsvaziandoValores();
+
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            RecebendoValor();
+            pessoa.Id = int.Parse(txtId.Text);
+            pessoa.Excluir();
+            EsvaziandoValores();
+
         }
     }
 }
