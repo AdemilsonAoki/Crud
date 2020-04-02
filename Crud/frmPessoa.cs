@@ -17,14 +17,19 @@ namespace Crud
             InitializeComponent();
         }
         Pessoa pessoa = new Pessoa();
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void RecebendoValor()
         {
-            
+            pessoa.Id = int.Parse(txtId.Text);
             pessoa.Nome = txtNome.Text;
             pessoa.Nascimento = DateTime.Parse(mskNascimento.Text);
             pessoa.Endereco = txtEndereco.Text;
             pessoa.Telefone = mskTxtBoxTelefone.Text;
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            
+          RecebendoValor();
             
             if (txtNome.Text == "")
             {
@@ -68,7 +73,7 @@ namespace Crud
             if (dgvPessoas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 dgvPessoas.CurrentRow.Selected = true;
-                //txtId.Text = dgvPessoas.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
+                txtId.Text = dgvPessoas.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
                 txtNome.Text = dgvPessoas.Rows[e.RowIndex].Cells["nome"].FormattedValue.ToString();
                 txtEndereco.Text = dgvPessoas.Rows[e.RowIndex].Cells["endereco"].FormattedValue.ToString();
                 mskNascimento.Text = dgvPessoas.Rows[e.RowIndex].Cells["data_nacimento"].FormattedValue.ToString();
@@ -78,6 +83,12 @@ namespace Crud
             
 
             
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            RecebendoValor();
+            pessoa.Alterar();
         }
     }
 }

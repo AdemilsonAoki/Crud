@@ -12,6 +12,7 @@ namespace Crud
     class Pessoa
 
     {
+        private int id;
         private DateTime  nascimento;
         private string nome;
         private string endereco;
@@ -21,11 +22,17 @@ namespace Crud
 
 
 
-        public string Nome
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+          public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
+
         public string Endereco
         {
             get { return endereco; }
@@ -51,11 +58,12 @@ namespace Crud
 
         dbConc conexao = new dbConc();
         MySqlCommand comando;
+        bool cad = false;
         public void Cadastrar()
         {
 
           
-            bool cad = false;
+            
             try
             {
                
@@ -85,7 +93,31 @@ namespace Crud
         }
         public void Alterar()
         {
+            try
+            {
 
+
+                string strSql = "UPDATE PESSOAS SET nome='" + nome + "', data_nacimento= '" + nascimento.ToString("yyyy-MM-dd") + "', endereco= '" + endereco + "' , telefone= '" + telefone + "' where id= '" + id + "'";
+                  
+                comando = new MySqlCommand(strSql, conexao.AbrirBanco());
+                comando.ExecuteNonQuery();
+                cad = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cad = false;
+            }
+            finally
+            {
+                conexao.FecharBanco(conexao.AbrirBanco());
+                //conexao = null;
+                //comando = null;
+            }
+            if (cad == true)
+            {
+                MessageBox.Show("atualizado com sucesso!", MessageBoxButtons.OK.ToString());
+            }
         }
         public void Excluir()
         {
